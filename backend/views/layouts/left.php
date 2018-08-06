@@ -88,64 +88,34 @@
             </li>
             <!-- /dashboard -->
          
-			<!-- student -->
-            <li>
-                <a href="javascript:;">
-                <span class="menu-caret">
-                <i class="material-icons">arrow_drop_down</i>
-                </span>
-                <i class="material-icons text-success">font_download</i>               
-                <span>Student</span>
+			<!-- quotation -->
+			<li>
+                <a href="quotation">
+                <i class="material-icons text-success">assignment</i>
+                <span>Quotation</span>
                 </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="registration">
-                        <span>Registration</span>
-                        </a>
-                    </li>
-					<li>
-                        <a href="class">
-                        <span>Kelas</span>
-                        </a>
-                    </li>      
-                    <li>
-                        <a href="billing">
-                        <span>Billing</span>
-                        </a>
-                    </li> 					            
-                </ul>
             </li>
-            <!-- /student -->
+            <!-- /quotation -->
 			
-            <!-- setup -->
-            <li>
-                <a href="javascript:;">
-                <span class="menu-caret">
-                <i class="material-icons">arrow_drop_down</i>
-                </span>
-                <i class="material-icons text-danger">explore</i>
-                <span>Setup</span>
+			
+			<!-- quotation -->
+			<li>
+                <a href="cases">
+                <i class="material-icons text-warning">gavel</i>
+                <span>Cases</span>
                 </a>
-                <ul class="sub-menu">
-                    <li>
-                        <a href="tagihan">
-                        <span>Billing</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="kelas">
-                        <span>Student Class</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="jurusan">
-                        <span>Student Majors</span>
-                        </a>
-                    </li>                   
-                </ul>
             </li>
-            <!-- /setup -->
-            
+            <!-- /quotation -->
+			
+           
+            <!-- invoice -->
+			<li>
+                <a href="invoice">
+                <i class="material-icons text-danger">payment</i>
+                <span>Invoice</span>
+                </a>
+            </li>
+            <!-- /invoice -->
 			
             <li>
                 <hr/>
