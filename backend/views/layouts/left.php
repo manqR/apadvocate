@@ -30,6 +30,7 @@
 			})
 			
 		');
+			
 
 ?>
 
@@ -57,7 +58,7 @@
             </div>
             <div class="user-info expanding-hidden">
                 <?= Yii::$app->user->identity->username ?>
-                <small class="bold">Administrator</small>
+                <small class="bold">Client</small>
             </div>
         </a>
         <div class="dropdown-menu">
@@ -111,8 +112,17 @@
             <!-- invoice -->
 			<li>
                 <a href="invoice">
-                <i class="material-icons text-danger">payment</i>
+                <i class="material-icons text-danger">receipt</i>
                 <span>Invoice</span>
+                </a>
+            </li>
+            <!-- /invoice --> 
+			
+			<!-- invoice -->
+			<li>
+                <a href="payment">
+                <i class="material-icons text-info">payment</i>
+                <span>Payment</span>
                 </a>
             </li>
             <!-- /invoice -->
