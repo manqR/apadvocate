@@ -19,7 +19,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'tagihan')->textInput() ?>
 
-    <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
+    <?= $model->isNewRecord ? $form->field($model, 'password')->passwordInput(['maxlength' => true]) : ''?>
 
     <?= $form->field($model, 'status')->dropDownList([ 'Y' => 'Y', 'N' => 'N', ], ['prompt' => '-- Pilih --','style'=>'font-size:12px']) ?>
 

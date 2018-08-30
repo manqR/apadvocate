@@ -40,14 +40,14 @@ $this->registerCssFile('../vendors/select2/select2.css');
                 ]); 
     
     ?>
-    
+
     <?= $form->field($model, 'idcategory' ,['options' => ['tag' => 'false']])-> dropDownList(
 				ArrayHelper::map(Category::find()->all(),'idcategory','category'),
-				['prompt'=>'Choose Majors...','class'=>'select2 m-b-1','style' => 'width: 100%'])->label('Category');  ?>
+				['prompt'=>'Choose Category...','class'=>'select2 m-b-1','style' => 'width: 100%'])->label('Category');  ?>
 			
 	<?= $form->field($model, 'idclient', ['options' => ['tag' => 'false']])-> dropDownList(
 				ArrayHelper::map(Client::find()->all(),'idclient','nama'),
-				['prompt'=>'Choose Class...','class'=>'select2 m-b-1','style' => 'width: 100%'])->label('Client');  ?>
+				['prompt'=>'Choose Client...','class'=>'select2 m-b-1','style' => 'width: 100%'])->label('Client');  ?>
 
     <?= $form->field($model, 'filename')->fileInput(['class'=>'form-control'])->label('Upload File') ?>
 

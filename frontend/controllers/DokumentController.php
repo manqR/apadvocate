@@ -69,6 +69,7 @@ class DokumentController extends Controller
 
         if ($model->load(Yii::$app->request->post())){
             
+            
             $model->idcategory = $model->idcategory;
             $model->idclient = $model->idclient;
             $model->idcategory = $model->idcategory;
@@ -105,8 +106,44 @@ class DokumentController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->iddokumen]);
+        if ($model->load(Yii::$app->request->post())){
+
+            $model->filename = UploadedFile::getInstance($model,'filename');
+            if(!empty($model->filename)){
+                $model->idcategory = $model->idcategory;
+                $model->idclient = $model->idclient;
+                $model->idcategory = $model->idcategory;
+                $uploadDir = Yii::getAlias('@webroot/document/'.$model->idclient);
+                if(!is_dir("document/". $model->idclient ."/")) {
+                    mkdir("document/". $model->idclient ."/");
+                }            
+                
+                $model->filename->saveAs($uploadDir.'/'.$model->filename);	
+                $model->save(false);
+                // var_dump($model->filename);
+                // echo "tidak kosong";
+                return $this->redirect(['view', 'id' => $model->iddokumen]);
+            }else{
+                $doc = Dokument::find()
+                ->where(['idcategory'=>$model->idcategory])
+                ->Andwhere(['idclient'=>$model->idclient])
+                ->One();
+                $model->idcategory = $model->idcategory;
+                $model->idclient = $model->idclient;
+                $model->idcategory = $model->idcategory;
+                $model->filename = $doc->filename;
+                $model->save(false);
+                // var_dump($model->filename);
+                // echo "kosong";
+                return $this->redirect(['view', 'id' => $model->iddokumen]);
+            }
+            
+            
+             
+             
+           
+            
+            
         }
 
         return $this->render('update', [

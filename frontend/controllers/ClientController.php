@@ -99,7 +99,15 @@ class ClientController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            
+            $model->idclient = $model->idclient;
+            $model->nama = $model->nama;
+            $model->email = $model->email;
+            $model->tagihan = $model->tagihan;
+            $model->status = $model->status;
+                   
+            $model->save(false);
             return $this->redirect(['view', 'id' => $model->idclient]);
         }
 

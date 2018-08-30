@@ -30,7 +30,7 @@ class Dokument extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idcategory', 'idclient', 'filename'], 'required'],
+            [['idcategory', 'idclient'], 'required'],
             [['idcategory'], 'integer'],
             [['tanggal'], 'safe'],
             [['idclient'], 'string', 'max' => 10],
