@@ -47,24 +47,22 @@
         <!-- /toggle offscreen menu -->
         <!-- logo -->
         <a class="brand-logo">
-			<img class="expanding-hidden" src="images/logo.png" alt=""/>
+			<img class="expanding-hidden" src="../images/logo.png" alt=""/>
         </a>
         <!-- /logo -->
     </div>
     <div class="nav-profile dropdown">
         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
             <div class="user-image">
-                <img src="images/avatar.jpg" class="avatar img-circle" alt="user" title="user"/>
+                <img src="../images/avatar.jpg" class="avatar img-circle" alt="user" title="user"/>
             </div>
             <div class="user-info expanding-hidden">
-                <?= Yii::$app->user->identity->nama ?>
+                <?= Yii::$app->user->identity->username ?>
                 <small class="bold">Client</small>
             </div>
         </a>
         <div class="dropdown-menu">
-            <a class="dropdown-item" href="javascript:;">Profile</a>                       
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:;">Help</a>			
+         	
 			<?=				  
 				  Html::beginForm(['/site/logout'], 'post')
 				. Html::submitButton(
@@ -89,55 +87,58 @@
             </li>
             <!-- /dashboard -->
          
-			<!-- quotation -->
+			<!-- Client -->
 			<li>
-                <a href="quotation">
+                <a href="client">
                 <i class="material-icons text-success">assignment</i>
-                <span>Quotation</span>
+                <span>Add Client</span>
                 </a>
             </li>
-            <!-- /quotation -->
+            <!-- /Client -->
 			
 			
-			<!-- quotation -->
+
+            <!-- Payment -->
 			<li>
-                <a href="cases">
+                <a href="category">
+                <i class="material-icons text-danger">payment</i>
+                <span>Upload Category</span>
+                </a>
+            </li>
+            <!-- /Payment -->
+
+
+			<!-- Upload -->
+			<li>
+                <a href="upload">
                 <i class="material-icons text-warning">gavel</i>
-                <span>Cases</span>
+                <span>Upload</span>
                 </a>
             </li>
-            <!-- /quotation -->
+            <!-- /Upload -->
 			
-           
-            <!-- invoice -->
-			<li>
-                <a href="invoice">
-                <i class="material-icons text-danger">receipt</i>
-                <span>Invoice</span>
-                </a>
-            </li>
-            <!-- /invoice --> 
-			
-			<!-- invoice -->
+
+			<!-- Payment -->
 			<li>
                 <a href="payment">
                 <i class="material-icons text-info">payment</i>
                 <span>Payment</span>
                 </a>
             </li>
-            <!-- /invoice -->
+            <!-- /Payment -->
 			
+
             <li>
                 <hr/>
             </li>
 			
             <!-- documentation -->
-            <!-- <li>
+            <li>
                 <a href="http://milestone.nyasha.me/latest/documentation" target="_blank">
                 <i class="material-icons">local_library</i>
                 <span>Documentation</span>
                 </a>
-            </li> -->
+            </li>
             <!-- /documentation -->
         </ul>
     </nav>

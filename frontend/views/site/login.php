@@ -7,33 +7,36 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Please fill out the following fields to login:</p>
-
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
-
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
-
-                <div style="color:#999;margin:1em 0">
-                    If you forgot your password you can <?= Html::a('reset it', ['site/request-password-reset']) ?>.
-                </div>
-
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-                </div>
-
-            <?php ActiveForm::end(); ?>
-        </div>
+<div class="session-content">
+    <div class="card card-block form-layout">
+	 
+		<?php $form = ActiveForm::begin(['id' => 'validate']); ?>        
+            <div class="text-xs-center m-b-3">
+                <img src="../images/logo-icon.png" height="80" alt="" class="m-b-1"/>
+                <h5>
+                    Welcome back!
+                </h5>
+                <p class="text-muted">
+                    Sign in with your app id to continue.
+                </p>
+            </div>
+            <fieldset class="form-group">
+                <label for="username">
+                Enter your username
+                </label>
+				<?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class'=>'form-control form-control-lg', 'placeholder'=>'username'])->label(false) ?>                
+            </fieldset>
+            <fieldset class="form-group">
+                <label for="password">
+                Enter your password
+                </label>
+				<?= $form->field($model, 'password')->passwordInput(['class'=>'form-control form-control-lg','placeholder'=>'**********'])->label(false) ?>                
+            </fieldset>
+           
+            <button class="btn btn-primary btn-block btn-lg" type="submit">Login</button>
+           
+       <?php ActiveForm::end(); ?>
     </div>
 </div>
