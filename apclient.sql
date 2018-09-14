@@ -10,20 +10,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping structure for table apclient.category
-CREATE TABLE IF NOT EXISTS `category` (
-  `idcategory` int(11) NOT NULL AUTO_INCREMENT,
-  `category` varchar(50) NOT NULL,
-  PRIMARY KEY (`idcategory`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
--- Dumping data for table apclient.category: ~0 rows (approximately)
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` (`idcategory`, `category`) VALUES
-	(1, 'Quotation');
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
-
-
 -- Dumping structure for table apclient.client
 CREATE TABLE IF NOT EXISTS `client` (
   `idclient` char(10) NOT NULL,
@@ -41,8 +27,7 @@ CREATE TABLE IF NOT EXISTS `client` (
 -- Dumping data for table apclient.client: ~2 rows (approximately)
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
 INSERT INTO `client` (`idclient`, `nama`, `email`, `tagihan`, `password`, `auth_key`, `status`, `user_create`, `date_create`) VALUES
-	('001', 'Demo', 'demo@apadvocate.com', 100000000, '$2y$13$NbRr9gm4PLioLQ.mz.viUOxAekagzzppSZ3oY0nAQbeVVzmEUsbO6', 'LbbfafvtqD11-dQALAcOlfggTcWAmEMI', 'N', '', '0000-00-00 00:00:00'),
-	('client', 'adinugraha', 'muhamadadinugraha@gmail.com', 100000, '$2y$13$g4g5SjBvrIy4uaJnXjaFMe2oU01R/F8k9NvYL6FRvUVNeL5SNSqfy', 'u4sncBiKnrWdrm2Y9kAp1L_-oq2Ga1AN', 'Y', 'admin', '2018-08-30 05:05:42');
+	('adinugraha', 'Muhamad Adinugraha', 'muhamadadinugraha@gmail.com', 50000000000, '$2y$13$OTo2pn31E3667AL8FBD4budGPFBrFxJatkAU6GVDb.kyZHSXuwXqW', 'lIFV8tkNxxOnO_WAFZ9rX6no9cLkndW6', 'Y', 'admin', '2018-09-14 12:57:28');
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 
 
@@ -55,15 +40,14 @@ CREATE TABLE IF NOT EXISTS `dokument` (
   `tanggal` datetime NOT NULL,
   `user_upload` varchar(50) NOT NULL,
   PRIMARY KEY (`iddokumen`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table apclient.dokument: ~4 rows (approximately)
 /*!40000 ALTER TABLE `dokument` DISABLE KEYS */;
 INSERT INTO `dokument` (`iddokumen`, `kategori`, `idclient`, `filename`, `tanggal`, `user_upload`) VALUES
-	(1, 'Quotation', 'client', '884-1-6281-1-10-20170814.pdf', '2018-08-30 00:00:00', 'admin'),
-	(2, 'Quotation', 'client', 'Chrysanthemum.jpg', '2018-09-14 09:45:16', 'admin'),
-	(3, 'Cases', 'client', 'Desert.jpg', '2018-09-14 10:42:40', 'admin'),
-	(4, 'Invoice', 'client', 'Tulips.jpg', '2018-09-14 10:44:28', 'admin');
+	(5, 'Quotation', 'adinugraha', 'Chrysanthemum.jpg', '2018-09-14 12:59:07', 'admin'),
+	(6, 'Cases', 'adinugraha', 'Desert.jpg', '2018-09-14 12:59:35', 'admin'),
+	(7, 'Invoice', 'adinugraha', 'Jellyfish.jpg', '2018-09-14 13:00:06', 'admin');
 /*!40000 ALTER TABLE `dokument` ENABLE KEYS */;
 
 
@@ -95,12 +79,11 @@ CREATE TABLE IF NOT EXISTS `payment` (
   PRIMARY KEY (`idpayment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table apclient.payment: ~1 rows (approximately)
+-- Dumping data for table apclient.payment: ~3 rows (approximately)
 /*!40000 ALTER TABLE `payment` DISABLE KEYS */;
 INSERT INTO `payment` (`idpayment`, `idclient`, `keterangan`, `nominal`, `bukti_transfer`, `user_approve`, `status`, `tanggal`) VALUES
-	('BILL488129', 'client', 'dsf', 234, '', '', 0, '2018-09-14 11:21:30'),
-	('BILL806762', 'client', 'Pembayaran Ke 5', 1000000, 'Lighthouse.jpg', 'admin', 1, '2018-09-14 11:33:13'),
-	('BILL951571', 'client', 'asdasd', 34234, 'Desert.jpg', '', 0, '2018-09-14 11:31:41');
+	('BILL477698', 'adinugraha', 'Term 1', 10000000, 'Desert.jpg', 'admin', 1, '2018-09-14 13:02:14'),
+	('BILL925180', 'adinugraha', 'Pembayaran Ke 2', 400000, 'Koala.jpg', 'admin', 1, '2018-09-14 13:15:48');
 /*!40000 ALTER TABLE `payment` ENABLE KEYS */;
 
 

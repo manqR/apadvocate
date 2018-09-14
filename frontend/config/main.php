@@ -58,6 +58,9 @@ return [
                 'payment-create'=>'payment/create',
 
 
+                'payment-download-<id>-<client>'=>'payment/download',
+
+
                 // UPDATE
                 'client-update-<id>'=>'client/update',
                 'category-update-<id>'=>'category/update',

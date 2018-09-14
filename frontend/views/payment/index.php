@@ -28,7 +28,15 @@ $this->params['breadcrumbs'][] = $this->title;
 			],                
             'keterangan',
             'nominal',
-            'bukti_transfer',
+            [
+				'header' => 'Bukti Transfer',
+                'attribute' => 'bukti_transfer',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return '<a href="payment-download-'.$model->idpayment.'-'.$model->idclient.'" class="material-icons" aria-hidden="true">file_download</a>';                
+                    
+                },
+			],     
             [
 				'header' => 'Status',
                 'attribute' => 'status',
@@ -38,6 +46,12 @@ $this->params['breadcrumbs'][] = $this->title;
                     
                 },
 			],        
+               
+            [
+                'header' => 'User Approve',   
+                'attribute' => 'user_approve',            
+			],        
+               
             //'user_input',
             //'status',
             //'tanggal',

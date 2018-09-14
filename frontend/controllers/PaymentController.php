@@ -82,6 +82,22 @@ class PaymentController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+
+    public function actionDownload($id,$client){
+		$download = Payment::find()
+				->where(['idclient'=>$client])
+				->AndWhere(['idpayment'=>$id])
+				->One();
+			
+        $path = Yii::getAlias('@webroot').'/../payments/'.$download->idclient.'/'.$download->bukti_transfer;          
+        if (file_exists($path)) {
+            return Yii::$app->response->sendFile($path);
+		}
+	}
+    
+    
+    
+
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
