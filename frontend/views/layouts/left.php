@@ -47,7 +47,7 @@
         <!-- /toggle offscreen menu -->
         <!-- logo -->
         <a class="brand-logo">
-			<img class="expanding-hidden" src="../images/logo.png" alt=""/>
+			<img class="expanding-hidden" src="../images/logo.jpg" alt=""/>
         </a>
         <!-- /logo -->
     </div>
@@ -58,7 +58,7 @@
             </div>
             <div class="user-info expanding-hidden">
                 <?= Yii::$app->user->identity->username ?>
-                <small class="bold">Client</small>
+                <small class="bold">Administrator</small>
             </div>
         </a>
         <div class="dropdown-menu">
@@ -94,18 +94,7 @@
                 <span>Add Client</span>
                 </a>
             </li>
-            <!-- /Client -->
-			
-			
-
-            <!-- Payment -->
-			<li>
-                <a href="category">
-                <i class="material-icons text-danger">payment</i>
-                <span>Upload Category</span>
-                </a>
-            </li>
-            <!-- /Payment -->
+            <!-- /Client -->						        
 
 
 			<!-- Upload -->

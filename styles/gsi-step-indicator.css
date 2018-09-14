@@ -89,9 +89,9 @@ Common
     flex: 1;
     font-size: 0.8125rem; }
   .gsi-step-indicator li.current > * {
-    color: #4c7ff0; }
+    color: #3a3d44; }
   .gsi-step-indicator a:hover {
-    color: #4c7ff0; }
+    color: #3a3d44; }
   .gsi-step-indicator a {
     text-decoration: none !important;
     display: -webkit-box;
@@ -123,8 +123,8 @@ Common
     border-color: #e8e8e8; }
   .gsi-step-indicator.triangle li.current > * {
     color: #ffffff;
-    background-color: #4c7ff0;
-    border-color: #4c7ff0; }
+    background-color: #3a3d44;
+    border-color: #3a3d44; }
   .gsi-step-indicator.triangle li:first-of-type > * {
     border-radius: 2px 0 0 2px; }
   .gsi-step-indicator.triangle li:last-of-type > * {
@@ -268,10 +268,10 @@ Basic Style
         font-size: 14px;
         display: block; }
   .gsi-style-4 li.current > * {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     color: #fff; }
     .gsi-style-4 li.current > * .number:before {
-      border-left-color: #4c7ff0; }
+      border-left-color: #3a3d44; }
 
 .gsi-style-5 {
   width: 100%;
@@ -306,7 +306,7 @@ Basic Style
         font-size: 14px;
         display: block; }
   .gsi-style-5 li.current > * {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     color: #fff; }
 
 .gsi-style-6 {
@@ -346,7 +346,7 @@ Basic Style
         font-size: 14px;
         display: block; }
   .gsi-style-6 li.current > * .number {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     color: #fff; }
 
 .gsi-style-6.gsi-step-no-available li.current ~ li > * .number,
@@ -389,32 +389,32 @@ Basic Style
         font-size: 14px;
         display: block; }
   .gsi-style-7 li.current:hover > * {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     color: #fff; }
 
 .gsi-style-7.border-left li a {
   border-left: 10px solid #535a6c; }
 
 .gsi-style-7.border-left li.current > * {
-  border-left: 10px solid #4c7ff0; }
+  border-left: 10px solid #3a3d44; }
 
 .gsi-style-7.border-right li a {
   border-right: 10px solid #535a6c; }
 
 .gsi-style-7.border-right li.current > * {
-  border-right: 10px solid #4c7ff0; }
+  border-right: 10px solid #3a3d44; }
 
 .gsi-style-7.border-top li a {
   border-top: 10px solid #535a6c; }
 
 .gsi-style-7.border-top li.current > * {
-  border-top: 10px solid #4c7ff0; }
+  border-top: 10px solid #3a3d44; }
 
 .gsi-style-7.border-bottom li a {
   border-bottom: 10px solid #535a6c; }
 
 .gsi-style-7.border-bottom li.current > * {
-  border-bottom: 10px solid #4c7ff0; }
+  border-bottom: 10px solid #3a3d44; }
 
 .gsi-style-8 {
   width: 100%;
@@ -461,10 +461,10 @@ Basic Style
         display: block; }
   .gsi-style-8 li.visited > *,
   .gsi-style-8 li.current > * {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     color: #fff; }
   .gsi-style-8 li.visited:after {
-    background-color: #4c7ff0 !important; }
+    background-color: #3a3d44 !important; }
 
 .gsi-style-8.gsi-vertical li {
   margin-top: 20px; }
@@ -488,7 +488,7 @@ Basic Style
     margin-left: 40px;
     display: inline-table; }
     .gsi-style-9 li a:hover {
-      color: #4c7ff0; }
+      color: #3a3d44; }
   .gsi-style-9 li:not(:last-child):after {
     position: absolute;
     content: '';
@@ -512,9 +512,9 @@ Basic Style
         display: none; }
   .gsi-style-9 li.visited > *,
   .gsi-style-9 li.current > * {
-    color: #4c7ff0; }
+    color: #3a3d44; }
   .gsi-style-9 li.visited:after {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
   .gsi-style-9 li > *:after {
     position: absolute;
     content: '';
@@ -527,7 +527,7 @@ Basic Style
     border-radius: 50%; }
   .gsi-style-9 li.visited > *:after,
   .gsi-style-9 li.current > *:after {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     z-index: 3; }
 
 .gsi-style-9.gsi-vertical li {
@@ -558,7 +558,7 @@ Basic Style
     margin-left: 40px;
     display: inline-table; }
     .gsi-style-10 li a:hover {
-      color: #4c7ff0; }
+      color: #3a3d44; }
     .gsi-style-10 li a:hover:before {
       position: absolute;
       content: '';
@@ -598,11 +598,11 @@ Basic Style
         display: none; }
   .gsi-style-10 li.visited > *,
   .gsi-style-10 li.current > * {
-    color: #4c7ff0; }
+    color: #3a3d44; }
   .gsi-style-10 li.visited:after {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
   .gsi-style-10 li.visited a:hover:before {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
   .gsi-style-10 li > *:after {
     position: absolute;
     content: '';
@@ -616,7 +616,7 @@ Basic Style
     border-radius: 50%; }
   .gsi-style-10 li.visited > *:after,
   .gsi-style-10 li.current > *:after {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
 
 .gsi-style-10.gsi-vertical li {
   padding-left: 15px;
@@ -647,7 +647,7 @@ Basic Style
     margin-left: 40px;
     display: inline-block; }
     .gsi-style-11 li a:hover {
-      color: #4c7ff0; }
+      color: #3a3d44; }
     .gsi-style-11 li a:hover:before {
       position: absolute;
       content: '';
@@ -681,14 +681,14 @@ Basic Style
       display: none; }
   .gsi-style-11 li.visited > *,
   .gsi-style-11 li.current > * {
-    color: #4c7ff0; }
+    color: #3a3d44; }
   .gsi-style-11 li.current:before,
   .gsi-style-11 li.current:after,
   .gsi-style-11 li.visited:before,
   .gsi-style-11 li.visited:after {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
   .gsi-style-11 li.visited a:hover:before {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
   .gsi-style-11 li > *:after {
     position: absolute;
     content: '';
@@ -702,7 +702,7 @@ Basic Style
     border-radius: 50%; }
   .gsi-style-11 li.visited > *:after,
   .gsi-style-11 li.current > *:after {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
 
 .gsi-style-11.gsi-vertical li {
   padding-left: 15px;
@@ -742,7 +742,7 @@ Basic Style
     display: inline-block;
     counter-increment: step; }
     .gsi-style-12 li a:hover {
-      color: #4c7ff0; }
+      color: #3a3d44; }
     .gsi-style-12 li a:hover:before {
       position: absolute;
       content: '';
@@ -776,14 +776,14 @@ Basic Style
       display: none; }
   .gsi-style-12 li.visited > *,
   .gsi-style-12 li.current > * {
-    color: #4c7ff0; }
+    color: #3a3d44; }
   .gsi-style-12 li.current:before,
   .gsi-style-12 li.current:after,
   .gsi-style-12 li.visited:before,
   .gsi-style-12 li.visited:after {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
   .gsi-style-12 li.visited a:hover:before {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
   .gsi-style-12 li > *:after {
     position: absolute;
     content: counter(step);
@@ -798,7 +798,7 @@ Basic Style
     border-radius: 50%; }
   .gsi-style-12 li.visited > *:after,
   .gsi-style-12 li.current > *:after {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     color: #fff; }
 
 .gsi-style-12.gsi-vertical li {
@@ -881,15 +881,15 @@ Basic Style
         display: block; }
   .gsi-style-13 li.visited > *,
   .gsi-style-13 li.current > * {
-    background-color: #4c7ff0;
+    background-color: #3a3d44;
     color: #fff; }
     .gsi-style-13 li.visited > * .number,
     .gsi-style-13 li.current > * .number {
-      border: 2px solid #4c7ff0;
+      border: 2px solid #3a3d44;
       background-color: #fff;
-      color: #4c7ff0; }
+      color: #3a3d44; }
   .gsi-style-13 li.visited:after {
-    background-color: #4c7ff0; }
+    background-color: #3a3d44; }
 
 @media only screen and (max-width: 480px) {
   .gsi-step-indicator {
@@ -1022,10 +1022,10 @@ Basic Style
         .gsi-style-4 li > * .desc span {
           font-size: 12px; }
     .gsi-style-4 li.current > * {
-      background-color: #4c7ff0;
+      background-color: #3a3d44;
       color: #fff; }
       .gsi-style-4 li.current > * .number:before {
-        border-left-color: #4c7ff0; }
+        border-left-color: #3a3d44; }
   .gsi-style-5 {
     padding: 0;
     width: 100%; }
@@ -1146,7 +1146,7 @@ Basic Style
     .gsi-style-12 li.current:after,
     .gsi-style-12 li.visited:before,
     .gsi-style-12 li.visited:after {
-      background-color: #4c7ff0; }
+      background-color: #3a3d44; }
   .gsi-style-12.gsi-vertical li {
     margin-left: 0; }
   .gsi-style-12.gsi-vertical li > * .desc {
@@ -1281,10 +1281,10 @@ Basic Style
         .gsi-style-4 li > * .desc span {
           font-size: 12px; }
     .gsi-style-4 li.current > * {
-      background-color: #4c7ff0;
+      background-color: #3a3d44;
       color: #fff; }
       .gsi-style-4 li.current > * .number:before {
-        border-left-color: #4c7ff0; }
+        border-left-color: #3a3d44; }
   .gsi-style-5 {
     padding: 0;
     width: 100%; }
@@ -1418,7 +1418,7 @@ Basic Style
     .gsi-style-12 li.current:after,
     .gsi-style-12 li.visited:before,
     .gsi-style-12 li.visited:after {
-      background-color: #4c7ff0; }
+      background-color: #3a3d44; }
   .gsi-style-12.gsi-vertical li {
     margin-left: 0; }
   .gsi-style-12.gsi-vertical li > * .desc {

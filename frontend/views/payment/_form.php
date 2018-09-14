@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="card-block">
+<div class="card card-block">
 
     <?php $form = ActiveForm::begin(); ?>
 
@@ -20,13 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nominal')->textInput() ?>
 
-    <?= $form->field($model, 'bukti_transfer')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'user_input')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'tanggal')->textInput() ?>
+    <?= $form->field($model, 'status')->dropDownList(['1' => 'Verified', '0' => 'pending']); ?>    
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

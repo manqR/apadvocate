@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server version:               10.1.6-MariaDB - mariadb.org binary distribution
--- Server OS:                    Win64
--- HeidiSQL Version:             9.1.0.4867
+-- Host:                         localhost
+-- Server version:               10.1.25-MariaDB - mariadb.org binary distribution
+-- Server OS:                    Win32
+-- HeidiSQL Version:             9.3.0.4984
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -10,20 +10,17 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping database structure for apclient
-CREATE DATABASE IF NOT EXISTS `apclient` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `apclient`;
-
-
 -- Dumping structure for table apclient.category
 CREATE TABLE IF NOT EXISTS `category` (
   `idcategory` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(50) NOT NULL,
   PRIMARY KEY (`idcategory`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- Dumping data for table apclient.category: ~0 rows (approximately)
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` (`idcategory`, `category`) VALUES
+	(1, 'Quotation');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 
 
@@ -36,29 +33,37 @@ CREATE TABLE IF NOT EXISTS `client` (
   `password` varchar(255) NOT NULL,
   `auth_key` varchar(50) DEFAULT NULL,
   `status` enum('Y','N') NOT NULL,
+  `user_create` varchar(50) NOT NULL,
+  `date_create` datetime NOT NULL,
   PRIMARY KEY (`idclient`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- Dumping data for table apclient.client: ~0 rows (approximately)
+-- Dumping data for table apclient.client: ~2 rows (approximately)
 /*!40000 ALTER TABLE `client` DISABLE KEYS */;
-INSERT INTO `client` (`idclient`, `nama`, `email`, `tagihan`, `password`, `auth_key`, `status`) VALUES
-	('001', 'Demo', 'demo@apadvocate.com', 100000000, '$2y$13$NbRr9gm4PLioLQ.mz.viUOxAekagzzppSZ3oY0nAQbeVVzmEUsbO6', 'LbbfafvtqD11-dQALAcOlfggTcWAmEMI', 'Y');
+INSERT INTO `client` (`idclient`, `nama`, `email`, `tagihan`, `password`, `auth_key`, `status`, `user_create`, `date_create`) VALUES
+	('001', 'Demo', 'demo@apadvocate.com', 100000000, '$2y$13$NbRr9gm4PLioLQ.mz.viUOxAekagzzppSZ3oY0nAQbeVVzmEUsbO6', 'LbbfafvtqD11-dQALAcOlfggTcWAmEMI', 'N', '', '0000-00-00 00:00:00'),
+	('client', 'adinugraha', 'muhamadadinugraha@gmail.com', 100000, '$2y$13$g4g5SjBvrIy4uaJnXjaFMe2oU01R/F8k9NvYL6FRvUVNeL5SNSqfy', 'u4sncBiKnrWdrm2Y9kAp1L_-oq2Ga1AN', 'Y', 'admin', '2018-08-30 05:05:42');
 /*!40000 ALTER TABLE `client` ENABLE KEYS */;
 
 
 -- Dumping structure for table apclient.dokument
 CREATE TABLE IF NOT EXISTS `dokument` (
   `iddokumen` int(11) NOT NULL AUTO_INCREMENT,
-  `idcategory` int(11) NOT NULL,
+  `kategori` varchar(50) NOT NULL,
   `idclient` char(10) NOT NULL,
   `filename` varchar(50) NOT NULL,
   `tanggal` datetime NOT NULL,
   `user_upload` varchar(50) NOT NULL,
   PRIMARY KEY (`iddokumen`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- Dumping data for table apclient.dokument: ~0 rows (approximately)
+-- Dumping data for table apclient.dokument: ~4 rows (approximately)
 /*!40000 ALTER TABLE `dokument` DISABLE KEYS */;
+INSERT INTO `dokument` (`iddokumen`, `kategori`, `idclient`, `filename`, `tanggal`, `user_upload`) VALUES
+	(1, 'Quotation', 'client', '884-1-6281-1-10-20170814.pdf', '2018-08-30 00:00:00', 'admin'),
+	(2, 'Quotation', 'client', 'Chrysanthemum.jpg', '2018-09-14 09:45:16', 'admin'),
+	(3, 'Cases', 'client', 'Desert.jpg', '2018-09-14 10:42:40', 'admin'),
+	(4, 'Invoice', 'client', 'Tulips.jpg', '2018-09-14 10:44:28', 'admin');
 /*!40000 ALTER TABLE `dokument` ENABLE KEYS */;
 
 
@@ -83,16 +88,19 @@ CREATE TABLE IF NOT EXISTS `payment` (
   `idclient` char(10) NOT NULL,
   `keterangan` varchar(100) NOT NULL,
   `nominal` double NOT NULL,
-  `bukti_transfer` varchar(50) NOT NULL,
-  `user_input` varchar(50) NOT NULL,
+  `bukti_transfer` varchar(50) DEFAULT NULL,
+  `user_approve` varchar(50) NOT NULL,
+  `status` int(11) NOT NULL,
   `tanggal` datetime NOT NULL,
   PRIMARY KEY (`idpayment`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- Dumping data for table apclient.payment: ~1 rows (approximately)
 /*!40000 ALTER TABLE `payment` DISABLE KEYS */;
-INSERT INTO `payment` (`idpayment`, `idclient`, `keterangan`, `nominal`, `bukti_transfer`, `user_input`, `tanggal`) VALUES
-	('BIL001', '001', 'Term Pembayaran 1', 500000000, 'upload.jpg', 'Rico', '2018-08-07 22:56:40');
+INSERT INTO `payment` (`idpayment`, `idclient`, `keterangan`, `nominal`, `bukti_transfer`, `user_approve`, `status`, `tanggal`) VALUES
+	('BILL488129', 'client', 'dsf', 234, '', '', 0, '2018-09-14 11:21:30'),
+	('BILL806762', 'client', 'Pembayaran Ke 5', 1000000, 'Lighthouse.jpg', 'admin', 1, '2018-09-14 11:33:13'),
+	('BILL951571', 'client', 'asdasd', 34234, 'Desert.jpg', '', 0, '2018-09-14 11:31:41');
 /*!40000 ALTER TABLE `payment` ENABLE KEYS */;
 
 

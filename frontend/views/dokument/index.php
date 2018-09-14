@@ -25,10 +25,11 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'iddokumen',
-            'idcategory',
+            'kategori',
             'idclient',
             'filename',
             'tanggal',
+           
             //'user_upload',
 
             ['class' => 'yii\grid\ActionColumn'],

@@ -86,8 +86,11 @@ class PaymentController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->idpayment]);
+        if ($model->load(Yii::$app->request->post())){
+        
+            $model->user_approve = Yii::$app->user->identity->username;            
+            $model->save(false);
+            return $this->redirect(['index']);
         }
 
         return $this->render('update', [

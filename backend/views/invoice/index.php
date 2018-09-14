@@ -15,9 +15,9 @@ $this->registerJsFile($root."/vendors/datatables/media/js/dataTables.bootstrap4.
 $this->registerCssFile($root."/vendors/datatables/media/css/dataTables.bootstrap4.css");
 
 $this->registerJs("  $('.datatable').DataTable({
-						 'ajax': 'http://localhost:8080/malaka/kelas-group/arraydata?id=2'
-					 });
-				 ");
+					'ajax': 'invoice/apidata'
+				});
+");
 
 $this->title = "Invoice";				 
 ?>
@@ -28,20 +28,18 @@ $this->title = "Invoice";
 			<thead>
 				<tr>
 					<th>
-						Name
+						ID Dokumen
 					</th>
 					<th>
-						Position
+						Kategori
 					</th>
 					<th>
-						Office
+						Nama File
 					</th>
 					<th>
-						Age
-					</th>
-					<th>
-						Start Date
-					</th>
+						Aksi
+					</th>		
+					
 				</tr>
 			</thead>
 		</table>

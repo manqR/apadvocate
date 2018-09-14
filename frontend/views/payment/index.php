@@ -22,10 +22,22 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'idpayment',
-            'idclient',
+            [
+				'header' => 'klien',
+				'attribute' => 'idclient'
+			],                
             'keterangan',
             'nominal',
             'bukti_transfer',
+            [
+				'header' => 'Status',
+                'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->status == 1 ? '<span class="tag tag-success">Verified</span>' : '<span class="tag tag-warning">Pending</span>';
+                    
+                },
+			],        
             //'user_input',
             //'status',
             //'tanggal',

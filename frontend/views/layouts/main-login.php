@@ -51,7 +51,7 @@ $this->registerCss("
 			<meta name="apple-mobile-web-app-capable" content="yes">
 			<meta name="apple-mobile-web-app-status-bar-style" content="black">
 			<meta name="apple-mobile-web-app-title" content="Milestone">
-			<meta name="theme-color" content="#4C7FF0">
+			<meta name="theme-color" content="#3a3d44">
             <link rel="stylesheet" href="../vendors/bootstrap/dist/css/bootstrap.css"/>
 			<link rel="stylesheet" href="../vendors/pace/themes/blue/pace-theme-minimal.css"/>
 			<link rel="stylesheet" href="../vendors/font-awesome/css/font-awesome.css"/>

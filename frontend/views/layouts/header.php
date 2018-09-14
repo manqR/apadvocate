@@ -28,12 +28,7 @@
         <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">
 			<span></span>
         </a>
-        <div class="navbar-search navbar-item">
-            <form class="search-form">
-                <i class="material-icons">search</i>
-                <input class="form-control" type="text" placeholder="Search" />
-            </form>
-        </div>
+     
         <div class="navbar-item nav navbar-nav">
             <div class="nav-item nav-link dropdown">
                 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">

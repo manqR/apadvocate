@@ -27,7 +27,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'idclient',
             'nama',
             'email:email',
-            'tagihan',            
+            'tagihan',    
+            [
+				'header' => 'Status',
+                'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function ($model) {
+                    return $model->status == 'Y' ? '<span class="tag tag-success">Enable</span>' : '<span class="tag tag-danger">Disable</span>';
+                    
+                },
+			],                
             //'auth_key',
             //'status',
             //'user_create',

@@ -4,7 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\web\View;
 use yii\helpers\ArrayHelper;
-use frontend\models\Category;
 use frontend\models\Client;
 /* @var $model backend\models\Dokument */
 /* @var $form yii\widgets\ActiveForm */
@@ -39,10 +38,10 @@ $this->registerCssFile('../vendors/select2/select2.css');
                     ]			
                 ]); 
     
+        $data = array('Quotation'=>'Quotation','Cases'=>'Cases','Invoice'=>'Invoice');
     ?>
-
-    <?= $form->field($model, 'idcategory' ,['options' => ['tag' => 'false']])-> dropDownList(
-				ArrayHelper::map(Category::find()->all(),'idcategory','category'),
+    
+    <?= $form->field($model, 'kategori' ,['options' => ['tag' => 'false']])-> dropDownList($data,
 				['prompt'=>'Choose Category...','class'=>'select2 m-b-1','style' => 'width: 100%'])->label('Category');  ?>
 			
 	<?= $form->field($model, 'idclient', ['options' => ['tag' => 'false']])-> dropDownList(

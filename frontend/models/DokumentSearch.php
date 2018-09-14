@@ -8,7 +8,7 @@ use yii\data\ActiveDataProvider;
 use frontend\models\Dokument;
 
 /**
- * DokumentSearch represents the model behind the search form of `backend\models\Dokument`.
+ * DokumentSearch represents the model behind the search form of `frontend\models\Dokument`.
  */
 class DokumentSearch extends Dokument
 {
@@ -18,8 +18,8 @@ class DokumentSearch extends Dokument
     public function rules()
     {
         return [
-            [['iddokumen', 'idcategory'], 'integer'],
-            [['idclient', 'filename', 'tanggal', 'user_upload'], 'safe'],
+            [['iddokumen'], 'integer'],
+            [['kategori', 'idclient', 'filename', 'tanggal', 'user_upload'], 'safe'],
         ];
     }
 
@@ -60,11 +60,11 @@ class DokumentSearch extends Dokument
         // grid filtering conditions
         $query->andFilterWhere([
             'iddokumen' => $this->iddokumen,
-            'idcategory' => $this->idcategory,
             'tanggal' => $this->tanggal,
         ]);
 
-        $query->andFilterWhere(['like', 'idclient', $this->idclient])
+        $query->andFilterWhere(['like', 'kategori', $this->kategori])
+            ->andFilterWhere(['like', 'idclient', $this->idclient])
             ->andFilterWhere(['like', 'filename', $this->filename])
             ->andFilterWhere(['like', 'user_upload', $this->user_upload]);
 

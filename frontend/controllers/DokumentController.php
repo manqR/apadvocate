@@ -68,12 +68,8 @@ class DokumentController extends Controller
         $model = new Dokument();
 
         if ($model->load(Yii::$app->request->post())){
-            
-            
-            $model->idcategory = $model->idcategory;
-            $model->idclient = $model->idclient;
-            $model->idcategory = $model->idcategory;
-           
+                                
+            $model->idclient = $model->idclient;                       
             $model->tanggal = date('Y-m-d H:i:s');
             $model->user_upload = Yii::$app->user->identity->username;
 
@@ -109,10 +105,8 @@ class DokumentController extends Controller
         if ($model->load(Yii::$app->request->post())){
 
             $model->filename = UploadedFile::getInstance($model,'filename');
-            if(!empty($model->filename)){
-                $model->idcategory = $model->idcategory;
-                $model->idclient = $model->idclient;
-                $model->idcategory = $model->idcategory;
+            if(!empty($model->filename)){                
+                $model->idclient = $model->idclient;                
                 $uploadDir = Yii::getAlias('@webroot/document/'.$model->idclient);
                 if(!is_dir("document/". $model->idclient ."/")) {
                     mkdir("document/". $model->idclient ."/");

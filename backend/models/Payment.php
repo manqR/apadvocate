@@ -12,7 +12,8 @@ use Yii;
  * @property string $keterangan
  * @property double $nominal
  * @property string $bukti_transfer
- * @property string $user_input
+ * @property string $user_approve
+ * @property int $status
  * @property string $tanggal
  */
 class Payment extends \yii\db\ActiveRecord
@@ -31,13 +32,14 @@ class Payment extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idpayment', 'idclient', 'keterangan', 'nominal', 'bukti_transfer', 'user_input', 'tanggal'], 'required'],
+            [['idpayment', 'idclient', 'keterangan', 'nominal', 'user_approve', 'status', 'tanggal'], 'required'],
             [['nominal'], 'number'],
+            [['status'], 'integer'],
             [['tanggal'], 'safe'],
             [['idpayment'], 'string', 'max' => 20],
             [['idclient'], 'string', 'max' => 10],
             [['keterangan'], 'string', 'max' => 100],
-            [['bukti_transfer', 'user_input'], 'string', 'max' => 50],
+            [['bukti_transfer', 'user_approve'], 'string', 'max' => 50],
             [['idpayment'], 'unique'],
         ];
     }
@@ -53,7 +55,8 @@ class Payment extends \yii\db\ActiveRecord
             'keterangan' => 'Keterangan',
             'nominal' => 'Nominal',
             'bukti_transfer' => 'Bukti Transfer',
-            'user_input' => 'User Input',
+            'user_approve' => 'User Approve',
+            'status' => 'Status',
             'tanggal' => 'Tanggal',
         ];
     }

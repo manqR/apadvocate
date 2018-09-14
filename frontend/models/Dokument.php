@@ -8,7 +8,7 @@ use Yii;
  * This is the model class for table "dokument".
  *
  * @property int $iddokumen
- * @property int $idcategory
+ * @property string $kategori
  * @property string $idclient
  * @property string $filename
  * @property string $tanggal
@@ -30,11 +30,10 @@ class Dokument extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['idcategory', 'idclient'], 'required'],
-            [['idcategory'], 'integer'],
+            [['kategori', 'idclient', 'filename', 'tanggal', 'user_upload'], 'required'],
             [['tanggal'], 'safe'],
+            [['kategori', 'filename', 'user_upload'], 'string', 'max' => 50],
             [['idclient'], 'string', 'max' => 10],
-            [['filename', 'user_upload'], 'string', 'max' => 50],
         ];
     }
 
@@ -45,7 +44,7 @@ class Dokument extends \yii\db\ActiveRecord
     {
         return [
             'iddokumen' => 'Iddokumen',
-            'idcategory' => 'Idcategory',
+            'kategori' => 'Kategori',
             'idclient' => 'Idclient',
             'filename' => 'Filename',
             'tanggal' => 'Tanggal',

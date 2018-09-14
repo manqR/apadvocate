@@ -1,5 +1,6 @@
 <?php
 use yii\web\View;
+use yii\helpers\Html;
 
 $root = '@web';
 
@@ -23,26 +24,34 @@ $this->registerJs("  $('.datatable').DataTable({
 $this->title = "Payment";				 
 
 ?>
+<p>
+	<?= Html::a(' Konfirmasi Pembayaran', ['create'], ['class' => 'btn btn-success fa fa-plus']) ?>
+</p>
 
 <div class="card card-block">
+	
+
 	<div class="table-responsive">
 		<table class="table table-bordered datatable" style="width:100%">
 			<thead>
 				<tr>
 					<th>
-						Name
+						ID Payment
 					</th>
 					<th>
-						Position
+						Keterangan
 					</th>
 					<th>
-						Office
+						Nominal
 					</th>
 					<th>
-						Age
+						 Bukti Transfer
 					</th>
 					<th>
-						Start Date
+					 	Status
+					</th>
+					<th>
+						Tanggal
 					</th>
 				</tr>
 			</thead>

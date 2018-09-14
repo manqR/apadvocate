@@ -47,7 +47,7 @@
         <!-- /toggle offscreen menu -->
         <!-- logo -->
         <a class="brand-logo">
-			<img class="expanding-hidden" src="images/logo.png" alt=""/>
+			<img class="expanding-hidden" src="images/logo.jpg" alt=""/>
         </a>
         <!-- /logo -->
     </div>
@@ -61,10 +61,7 @@
                 <small class="bold">Client</small>
             </div>
         </a>
-        <div class="dropdown-menu">
-            <a class="dropdown-item" href="javascript:;">Profile</a>                       
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:;">Help</a>			
+        <div class="dropdown-menu">            	
 			<?=				  
 				  Html::beginForm(['/site/logout'], 'post')
 				. Html::submitButton(

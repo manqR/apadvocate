@@ -18,7 +18,7 @@ class PaymentSearch extends Payment
     public function rules()
     {
         return [
-            [['idpayment', 'idclient', 'keterangan', 'bukti_transfer', 'user_input', 'tanggal'], 'safe'],
+            [['idpayment', 'idclient', 'keterangan', 'bukti_transfer', 'user_approve', 'tanggal'], 'safe'],
             [['nominal'], 'number'],
             [['status'], 'integer'],
         ];
@@ -69,7 +69,7 @@ class PaymentSearch extends Payment
             ->andFilterWhere(['like', 'idclient', $this->idclient])
             ->andFilterWhere(['like', 'keterangan', $this->keterangan])
             ->andFilterWhere(['like', 'bukti_transfer', $this->bukti_transfer])
-            ->andFilterWhere(['like', 'user_input', $this->user_input]);
+            ->andFilterWhere(['like', 'user_approve', $this->user_approve]);
 
         return $dataProvider;
     }
