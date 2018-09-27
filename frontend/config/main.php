@@ -42,12 +42,14 @@ return [
             'showScriptName' => false,
             'rules' => [
                 'login'=>'site/login',
+                'user'=>'user/index',
 
                 // INDEX
                 'client'=>'client/index',
                 'category'=>'category/index',
                 'upload'=>'dokument/index',
                 'payment'=>'payment/index',
+                'user'=>'user/index',
 
 
 
@@ -56,6 +58,7 @@ return [
                 'category-create'=>'category/create',
                 'upload-create'=>'dokument/create',
                 'payment-create'=>'payment/create',
+                'user-create'=>'user/create',
 
 
                 'payment-download-<id>-<client>'=>'payment/download',
@@ -66,6 +69,7 @@ return [
                 'category-update-<id>'=>'category/update',
                 'upload-update-<id>'=>'dokument/update',
                 'payment-update-<id>'=>'payment/update',
+                'user-update-<id>'=>'user/update',
 
 
 
@@ -75,6 +79,7 @@ return [
                 'category-view-<id>'=>'category/view',
                 'upload-view-<id>'=>'dokument/view',
                 'payment-view-<id>'=>'payment/view',
+                'user-view-<id>'=>'user/view',
 
 
 
@@ -84,6 +89,7 @@ return [
                 'category-delete-<id>'=>'category/delete',
                 'upload-delete-<id>'=>'dokument/delete',
                 'payment-delete-<id>'=>'payment/delete',
+                'user-delete-<id>'=>'user/delete',
             ],
         ],
         

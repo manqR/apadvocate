@@ -7,11 +7,12 @@ use common\models\User;
 /**
  * Signup form
  */
-class SignupForm extends Model
+class SignupForm extends Model 
 {
     public $username;
     public $email;
-    public $password;
+    public $password_hash;
+    public $status;
 
 
     /**
@@ -31,8 +32,11 @@ class SignupForm extends Model
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This email address has already been taken.'],
 
-            ['password', 'required'],
-            ['password', 'string', 'min' => 6],
+            ['password_hash', 'required'],
+            ['password_hash', 'string', 'min' => 6],
+            
+            ['status', 'required'],
+            ['status', 'number'],
         ];
     }
 
@@ -50,9 +54,10 @@ class SignupForm extends Model
         $user = new User();
         $user->username = $this->username;
         $user->email = $this->email;
-        $user->setPassword($this->password);
+        $user->status = $this->status;
+        $user->setPassword($this->password_hash);
         $user->generateAuthKey();
         
-        return $user->save() ? $user : null;
+        $user->save();
     }
 }

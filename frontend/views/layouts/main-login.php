@@ -72,14 +72,7 @@ $this->registerCss("
 								
 						<?= $content ?>
 				
-						<footer class="text-xs-center p-y-1">
-							<p>
-								<a href="extra-forgot.html">
-									Forgot password?
-								</a>
-							
-							</p>
-						</footer>
+					
 						
 					</div>
 				</div>

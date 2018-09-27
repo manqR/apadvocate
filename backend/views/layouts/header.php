@@ -20,9 +20,9 @@
             </a>
             <!-- /toggle offscreen menu -->
             <!-- logo -->
-            <a class="brand-logo hidden-xs-down">
+            <!-- <a class="brand-logo hidden-xs-down">
                 <img src="images/logo_white.png" alt="logo"/>
-            </a>
+            </a> -->
             <!-- /logo -->
         </div>
         <a class="navbar-item navbar-spacer-right navbar-heading hidden-md-down" href="#">

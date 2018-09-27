@@ -72,16 +72,7 @@ $this->registerCss("
 				<div class="session-panel">
 					<div class="session">
 								
-						<?= $content ?>
-				
-						<footer class="text-xs-center p-y-1">
-							<p>
-								<a href="extra-forgot.html">
-									Forgot password?
-								</a>
-							
-							</p>
-						</footer>
+						<?= $content ?>										
 						
 					</div>
 				</div>

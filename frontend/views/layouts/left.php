@@ -87,6 +87,16 @@
             </li>
             <!-- /dashboard -->
          
+			<!-- User -->
+			<li>
+                <a href="user">
+                <i class="material-icons text-default">perm_identity</i>
+                <span>Add User</span>
+                </a>
+            </li>
+            <!-- /User -->	
+
+
 			<!-- Client -->
 			<li>
                 <a href="client">
