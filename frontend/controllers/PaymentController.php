@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Payment;
+use frontend\models\Client;
 use frontend\models\PaymentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -106,6 +107,14 @@ class PaymentController extends Controller
         
             $model->user_approve = Yii::$app->user->identity->username;            
             $model->save(false);
+			
+			$modelMail = Client::find()
+						->where(['idclient'=>$model->idclient])
+						->One();
+						
+			include '../inc/functionEmail.php';
+            SendConfirmation($modelMail->email, $model->idclient, $model->status);
+			
             return $this->redirect(['index']);
         }
 

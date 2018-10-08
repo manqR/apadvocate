@@ -20,7 +20,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nominal')->textInput() ?>
 
-    <?= $form->field($model, 'status')->dropDownList(['1' => 'Verified', '0' => 'pending']); ?>    
+    <?= $form->field($model, 'status')->dropDownList(['1' => 'Verified', '0' => 'Reject']); ?>    
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

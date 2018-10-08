@@ -4,6 +4,7 @@ namespace frontend\controllers;
 
 use Yii;
 use frontend\models\Dokument;
+use frontend\models\Client;
 use frontend\models\DokumentSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -82,6 +83,11 @@ class DokumentController extends Controller
 
             $model->save(false);
             
+			$modelMail = Client::find()
+						->where(['idclient'=>$model->idclient])
+						->One();
+			include '../inc/functionEmail.php';
+            SendDokumen($modelMail->email, $model->idclient, $model->kategori);
             
             return $this->redirect(['view', 'id' => $model->iddokumen]);
         }

@@ -112,6 +112,10 @@ class PaymentController extends \yii\web\Controller
 				$model->bukti_transfer->saveAs($uploadDir.'/'.$model->bukti_transfer);	
 
 				$model->save(false);
+				
+				include './inc/functionEmail.php';
+				SendProof(Yii::$app->user->identity->email, Yii::$app->user->identity->idclient);
+				
 				return $this->redirect(['index']);
 				
 			}

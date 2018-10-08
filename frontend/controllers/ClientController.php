@@ -68,7 +68,9 @@ class ClientController extends Controller
         if ($model->load(Yii::$app->request->post())){
             
             
-
+			include '../inc/functionEmail.php';
+            SignupSend($model->email, $model->nama, $model->password);
+			
             $model->idclient = $model->idclient;
             $model->nama = $model->nama;
             $model->email = $model->email;
