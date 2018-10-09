@@ -2,16 +2,36 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = 'AP Advocates';
+
+
+
+$this->registerJs('
+    $.ajax({
+        type: "GET",
+        url: "https://apadvocates.com/administrator/api/articles-en",        
+        success: function(response){
+
+            $.each(response, function(k, v) {						
+                $("#show_details").append(\'<h2>\'+v.title+\'</h2>\'+v.description);          
+                
+            });
+        }
+    });
+');
+
 ?>
 <div class="site-index">
+   
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+    <div class="body-content jumbotron">
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <div class="row ">
+            <div class="col-lg-4" id="show_details">
+               
+            </div>
+           
+        </div>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
     </div>
-
 </div>
