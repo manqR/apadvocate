@@ -1,6 +1,6 @@
 <?php
 
-function SignupSend($email, $username, $password){
+function SignupSend($email, $username, $name, $password){
 
 		$from = array('office@apadvocates.com' => 'AP Advocates');
 		Yii::$app->mailer->compose()
@@ -42,7 +42,7 @@ function SignupSend($email, $username, $password){
 												<tr style="margin:0;padding:0">
 													<td style="margin:0;padding:0">
 														<h4 style="font-family:HelveticaNeue-Light,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;line-height:1.1;color:#000;font-weight:500;font-size:23px;margin:0 0 20px;padding:0">Bergabung dengan AP Advocates</h4>
-														<p style="font-weight:normal;font-size:14px;line-height:1.6;margin:0 0 20px;padding:0">Dear '.$username.',</p>
+														<p style="font-weight:normal;font-size:14px;line-height:1.6;margin:0 0 20px;padding:0">Dear '.$name.',</p>
 														<p style="font-weight:normal;font-size:14px;line-height:1.6;margin:0 0 20px;padding:0">Selamat, akun anda telah berhasil dibuat sebagi berikut:</p>
 														<table style="font-family:Helvetica Neue,Helvetica,Helvetica,Arial,sans-serif;font-size:10px;font-weight:bold;max-width:50%;border-collapse:collapse;border-spacing:0;width:100%;background-color:transparent;margin:0;padding:0" bgcolor="transparent">
 															<tbody>

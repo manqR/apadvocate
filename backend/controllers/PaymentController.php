@@ -114,7 +114,7 @@ class PaymentController extends \yii\web\Controller
 				$model->save(false);
 				
 				include './inc/functionEmail.php';
-				SendProof(Yii::$app->user->identity->email, Yii::$app->user->identity->idclient);
+				SendProof(Yii::$app->user->identity->email, Yii::$app->user->identity->nama);
 				
 				return $this->redirect(['index']);
 				

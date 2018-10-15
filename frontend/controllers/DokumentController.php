@@ -87,7 +87,7 @@ class DokumentController extends Controller
 						->where(['idclient'=>$model->idclient])
 						->One();
 			include '../inc/functionEmail.php';
-            SendDokumen($modelMail->email, $model->idclient, $model->kategori);
+            SendDokumen($modelMail->email, $modelMail->nama, $model->kategori);
             
             return $this->redirect(['view', 'id' => $model->iddokumen]);
         }

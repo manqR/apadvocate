@@ -69,7 +69,7 @@ class ClientController extends Controller
             
             
 			include '../inc/functionEmail.php';
-            SignupSend($model->email, $model->nama, $model->password);
+            SignupSend($model->email, $model->idclient, $model->nama, $model->password);
 			
             $model->idclient = $model->idclient;
             $model->nama = $model->nama;
